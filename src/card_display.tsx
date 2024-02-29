@@ -59,25 +59,25 @@ const renderContent = (card:Card) => {
 }
 
 
-export const CardDisplay = ({card}:{card: Card}) => {
+export const CardDisplay = ({data}:{data: Card}) => {
   return (<div>
     <div id='top-bar'>
-      <div id='name'>{card.name}</div>
-      <div id='memory'>{card.memory}</div>
+      <div id='name'>{data.name}</div>
+      <div id='memory'>{data.memory}</div>
       <div id='requirements'>
-        {card.vigor_required ? <div>{card.vigor_required} <img className='circle'/></div> : null}
-        {card.impulse_required ? <div>{card.impulse_required} <img className='triangle'/></div> : null}
-        {card.special_required ? <div>{card.special_required} <img className='square'/></div> : null}
+        {data.vigor_required ? <div>{data.vigor_required} <img className='circle'/></div> : null}
+        {data.impulse_required ? <div>{data.impulse_required} <img className='triangle'/></div> : null}
+        {data.special_required ? <div>{data.special_required} <img className='square'/></div> : null}
       </div>
     </div>
     <div id='img-box'>
       <img id='card-image'/>
     </div>
     <div id='middle-bar'>
-      {card.family ? <div id='card-class'>{card.family.name}</div> : null}
-      <div id='card-type'>{card.type}</div>
+      {data.family ? <div id='card-class'>{data.family.name}</div> : null}
+      <div id='card-type'>{data.type}</div>
     </div>
-    {renderContent(card)}
+    {renderContent(data)}
   </div>
   )
 }
